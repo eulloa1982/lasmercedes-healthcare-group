@@ -1,0 +1,604 @@
+schema: "paperclip/v1"
+agents:
+  aixa-software-engineer:
+    role: "engineer"
+    icon: "circuit-board"
+    capabilities: "Technical infrastructure engineer for the AIXA platform. Resolves connection and authentication errors between agents and AIXA modules, maintains and optimizes MCP proxies (token renewal, schema fixes), debugs agent technical failures across all departments, optimizes the Report Delivery pipeline (HTML formatting, delivery, attachments), and implements new integrations when new AIXA modules are deployed. Has the broadest technical access in the organization — role is to solve infrastructure problems, not to operate departments."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+        maxTurnsPerRun: 500
+      type: "claude_local"
+    inputs:
+      env:
+        AIXA_CLINICAL_API_ID:
+          description: "Optional default for AIXA_CLINICAL_API_ID on agent aixa-software-engineer"
+          kind: "plain"
+          default: "bc77d90c-8ef2-495b-a42f-c2630ee46738"
+          requirement: "optional"
+        AIXA_CLINICAL_API_URL:
+          description: "Optional default for AIXA_CLINICAL_API_URL on agent aixa-software-engineer"
+          kind: "plain"
+          default: "https://aixaapimanagementgateway.azure-api.net/aixa-clinical/mcp"
+          requirement: "optional"
+        AIXA_CLINICAL_TENANT_ID:
+          description: "Optional default for AIXA_CLINICAL_TENANT_ID on agent aixa-software-engineer"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        AIXA_MAINTENANCE_API_ID:
+          description: "Optional default for AIXA_MAINTENANCE_API_ID on agent aixa-software-engineer"
+          kind: "plain"
+          default: "1c2fd2b9-6e0c-4f13-a3e9-40e53d7f4131"
+          requirement: "optional"
+        AIXA_MAINTENANCE_API_URL:
+          description: "Optional default for AIXA_MAINTENANCE_API_URL on agent aixa-software-engineer"
+          kind: "plain"
+          default: "https://aixaapimanagementgateway.azure-api.net/aixa-maintenance/mcp"
+          requirement: "optional"
+        AIXA_MAINTENANCE_TENANT_ID:
+          description: "Optional default for AIXA_MAINTENANCE_TENANT_ID on agent aixa-software-engineer"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        AIXA_PHARMACY_API_ID:
+          description: "Optional default for AIXA_PHARMACY_API_ID on agent aixa-software-engineer"
+          kind: "plain"
+          default: "092f2ea6-aa52-4ad7-94b7-bad1448b0ec8"
+          requirement: "optional"
+        AIXA_PHARMACY_API_URL:
+          description: "Optional default for AIXA_PHARMACY_API_URL on agent aixa-software-engineer"
+          kind: "plain"
+          default: "https://aixaapimanagementgateway.azure-api.net/aixa-pharmacy/mcp"
+          requirement: "optional"
+        AIXA_PHARMACY_TENANT_ID:
+          description: "Optional default for AIXA_PHARMACY_TENANT_ID on agent aixa-software-engineer"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        AIXA_REFERRALS_API_ID:
+          description: "Optional default for AIXA_REFERRALS_API_ID on agent aixa-software-engineer"
+          kind: "plain"
+          default: "16b8b912-b360-4fdc-b879-0da12a96507d"
+          requirement: "optional"
+        AIXA_REFERRALS_API_URL:
+          description: "Optional default for AIXA_REFERRALS_API_URL on agent aixa-software-engineer"
+          kind: "plain"
+          default: "https://aixaapimanagementgateway.azure-api.net/aixa-referrals/mcp"
+          requirement: "optional"
+        AIXA_REFERRALS_TENANT_ID:
+          description: "Optional default for AIXA_REFERRALS_TENANT_ID on agent aixa-software-engineer"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        AIXA_SALES_API_ID:
+          description: "Optional default for AIXA_SALES_API_ID on agent aixa-software-engineer"
+          kind: "plain"
+          default: "a11493ea-948c-438b-89c4-fdd5a3527264"
+          requirement: "optional"
+        AIXA_SALES_API_URL:
+          description: "Optional default for AIXA_SALES_API_URL on agent aixa-software-engineer"
+          kind: "plain"
+          default: "https://aixaapimanagementgateway.azure-api.net/aixa-sales/mcp"
+          requirement: "optional"
+        AIXA_SALES_TENANT_ID:
+          description: "Optional default for AIXA_SALES_TENANT_ID on agent aixa-software-engineer"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        OUTLOOK_CLIENT_ID:
+          description: "Optional default for OUTLOOK_CLIENT_ID on agent aixa-software-engineer"
+          kind: "plain"
+          default: "96cb1e50-0781-43e0-aeb9-5cd50490660b"
+          requirement: "optional"
+        OUTLOOK_CLIENT_SECRET:
+          description: "Optional default for OUTLOOK_CLIENT_SECRET on agent aixa-software-engineer"
+          kind: "secret"
+          default: ""
+          requirement: "optional"
+        OUTLOOK_TENANT_ID:
+          description: "Optional default for OUTLOOK_TENANT_ID on agent aixa-software-engineer"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        PAPERCLIP_EXTERNAL_CLIENT_ID:
+          description: "Optional default for PAPERCLIP_EXTERNAL_CLIENT_ID on agent aixa-software-engineer"
+          kind: "plain"
+          default: "5a57c436-c192-4061-947d-17ca9ebff475"
+          requirement: "optional"
+        PAPERCLIP_EXTERNAL_CLIENT_SECRET:
+          description: "Optional default for PAPERCLIP_EXTERNAL_CLIENT_SECRET on agent aixa-software-engineer"
+          kind: "secret"
+          default: ""
+          requirement: "optional"
+        TZ:
+          description: "Optional default for TZ on agent aixa-software-engineer"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  ayren-castrillo:
+    role: "general"
+    icon: "shield"
+    capabilities: "Directora de recursos humanos. Supervisa contrataciones, nómina, beneficios, capacitación, evaluaciones de desempeño, rotación de personal y cumplimiento laboral. Monitorea headcount por localización, posiciones abiertas, ausentismo y satisfacción del empleado."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+        maxTurnsPerRun: 500
+      type: "claude_local"
+    inputs:
+      env:
+        TZ:
+          description: "Optional default for TZ on agent ayren-castrillo"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  cecie-montiel:
+    role: "general"
+    icon: "star"
+    capabilities: "Directora de ventas y experiencia del paciente. Supervisa ventas diarias, semanales y mensuales de todas las localizaciones. Monitorea nuevos pacientes, retención, satisfacción del paciente, quejas y resolución. Genera reporte diario de ventas del día (L-V 6PM), resumen semanal los viernes y consolidado mensual."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+        maxTurnsPerRun: 500
+      type: "claude_local"
+    inputs:
+      env:
+        AIXA_SALES_API_ID:
+          description: "Optional default for AIXA_SALES_API_ID on agent cecie-montiel"
+          kind: "plain"
+          default: "a11493ea-948c-438b-89c4-fdd5a3527264"
+          requirement: "optional"
+        AIXA_SALES_API_URL:
+          description: "Optional default for AIXA_SALES_API_URL on agent cecie-montiel"
+          kind: "plain"
+          default: "https://aixaapimanagementgateway.azure-api.net/aixa-sales/mcp"
+          requirement: "optional"
+        AIXA_SALES_TENANT_ID:
+          description: "Optional default for AIXA_SALES_TENANT_ID on agent cecie-montiel"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        OUTLOOK_CLIENT_ID:
+          description: "Optional default for OUTLOOK_CLIENT_ID on agent cecie-montiel"
+          kind: "plain"
+          default: "96cb1e50-0781-43e0-aeb9-5cd50490660b"
+          requirement: "optional"
+        OUTLOOK_CLIENT_SECRET:
+          description: "Optional default for OUTLOOK_CLIENT_SECRET on agent cecie-montiel"
+          kind: "secret"
+          default: ""
+          requirement: "optional"
+        OUTLOOK_TENANT_ID:
+          description: "Optional default for OUTLOOK_TENANT_ID on agent cecie-montiel"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        PAPERCLIP_EXTERNAL_CLIENT_ID:
+          description: "Optional default for PAPERCLIP_EXTERNAL_CLIENT_ID on agent cecie-montiel"
+          kind: "plain"
+          default: "5a57c436-c192-4061-947d-17ca9ebff475"
+          requirement: "optional"
+        PAPERCLIP_EXTERNAL_CLIENT_SECRET:
+          description: "Optional default for PAPERCLIP_EXTERNAL_CLIENT_SECRET on agent cecie-montiel"
+          kind: "secret"
+          default: ""
+          requirement: "optional"
+        TZ:
+          description: "Optional default for TZ on agent cecie-montiel"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  dr-rafael-gonz-lez:
+    role: "cmo"
+    icon: "microscope"
+    capabilities: "Dirección médica de Las Mercedes Healthcare Group. Supervisa calidad clínica, protocolos médicos, pacientes de alto riesgo, métricas de salud poblacional y cumplimiento regulatorio (HIPAA, HEDIS). Coordina con directores clínico y de farmacia. Identifica pacientes de alto riesgo, monitorea readmisiones, LOS y resultados clínicos. Genera reportes médicos diarios para el CEO."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+        maxTurnsPerRun: 500
+      type: "claude_local"
+    inputs:
+      env:
+        TZ:
+          description: "Optional default for TZ on agent dr-rafael-gonz-lez"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  esteban-ulloa:
+    role: "general"
+    icon: "zap"
+    capabilities: "Líder de la plataforma AIXA — sistema propietario de Las Mercedes Medical Centers. Desarrolla y mantiene el software nativo que centraliza los procesos operativos de la organización. Gestiona las API keys de acceso a los módulos de AIXA, integraciones con sistemas externos y desarrollo de nuevas funcionalidades. Provee acceso de datos a todos los departamentos a través de AIXA."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+        maxTurnsPerRun: 500
+      type: "claude_local"
+    inputs:
+      env:
+        TZ:
+          description: "Optional default for TZ on agent esteban-ulloa"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  gina-portilla:
+    role: "general"
+    icon: "cog"
+    capabilities: "Operaciones generales de Las Mercedes Healthcare Group. Supervisa el funcionamiento diario de las 18 localizaciones. Coordina logística, transporte de pacientes, recursos humanos, referidos y atención al paciente. Asegura eficiencia operativa, cumplimiento de estándares y resolución de incidencias. Genera reportes operativos diarios para el CEO."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+        maxTurnsPerRun: 500
+      type: "claude_local"
+    inputs:
+      env:
+        TZ:
+          description: "Optional default for TZ on agent gina-portilla"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  jessica-armas:
+    role: "general"
+    icon: "globe"
+    capabilities: "Directora de transporte de pacientes. Supervisa rutas, schedules, conductores, vehículos y logística de transporte médico. Monitorea puntualidad, viajes completados vs cancelados, utilización de flota y costos operativos de transporte. Genera reportes diarios de operaciones de transporte."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+        maxTurnsPerRun: 500
+      type: "claude_local"
+    inputs:
+      env:
+        TZ:
+          description: "Optional default for TZ on agent jessica-armas"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  jorgito-raad:
+    role: "general"
+    icon: "sparkles"
+    capabilities: "Director de marketing y comunicaciones. Supervisa campañas publicitarias, branding, redes sociales, contenido, relaciones públicas y comunicaciones internas de Las Mercedes Healthcare Group. Monitorea presupuesto de marketing, ROI de campañas, engagement en redes y alcance de marca."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+        maxTurnsPerRun: 500
+      type: "claude_local"
+    inputs:
+      env:
+        TZ:
+          description: "Optional default for TZ on agent jorgito-raad"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  juan-carlos:
+    role: "general"
+    icon: "wrench"
+    capabilities: "Director de mantenimiento de Las Mercedes Healthcare Group. Supervisa el mantenimiento preventivo y correctivo de las 18 localizaciones. Gestiona órdenes de trabajo, inventario de equipos, solicitudes de reparación, inspecciones, cumplimiento de códigos de edificación y coordinación con proveedores externos. Conectado al módulo de mantenimiento de AIXA para visibilidad en tiempo real de todas las operaciones de facilities."
+    adapter:
+      type: "claude_local"
+    inputs:
+      env:
+        AIXA_MAINTENANCE_API_ID:
+          description: "Optional default for AIXA_MAINTENANCE_API_ID on agent juan-carlos"
+          kind: "plain"
+          default: "1c2fd2b9-6e0c-4f13-a3e9-40e53d7f4131"
+          requirement: "optional"
+        AIXA_MAINTENANCE_API_URL:
+          description: "Optional default for AIXA_MAINTENANCE_API_URL on agent juan-carlos"
+          kind: "plain"
+          default: "https://aixaapimanagementgateway.azure-api.net/aixa-maintenance/mcp"
+          requirement: "optional"
+        AIXA_MAINTENANCE_TENANT_ID:
+          description: "Optional default for AIXA_MAINTENANCE_TENANT_ID on agent juan-carlos"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        PAPERCLIP_EXTERNAL_CLIENT_ID:
+          description: "Optional default for PAPERCLIP_EXTERNAL_CLIENT_ID on agent juan-carlos"
+          kind: "plain"
+          default: "5a57c436-c192-4061-947d-17ca9ebff475"
+          requirement: "optional"
+        PAPERCLIP_EXTERNAL_CLIENT_SECRET:
+          description: "Optional default for PAPERCLIP_EXTERNAL_CLIENT_SECRET on agent juan-carlos"
+          kind: "secret"
+          default: ""
+          requirement: "optional"
+        TZ:
+          description: "Optional default for TZ on agent juan-carlos"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  leslie-gomez:
+    role: "cfo"
+    icon: "gem"
+    capabilities: "Finanzas corporativas de Las Mercedes Healthcare Group. Controla presupuestos, gastos operativos, facturación, cuentas por cobrar/pagar, nómina y reportes financieros. Supervisa el gasto en medicamentos por médico, análisis de rentabilidad por localización y cumplimiento fiscal. Genera reportes financieros diarios, semanales y mensuales para el CEO."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+        maxTurnsPerRun: 500
+      type: "claude_local"
+    inputs:
+      env:
+        TZ:
+          description: "Optional default for TZ on agent leslie-gomez"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  luis-avila:
+    role: "general"
+    icon: "heart"
+    capabilities: "Director de servicios clínicos. Supervisa operaciones clínicas diarias en todas las localizaciones. Monitorea censo de pacientes, admisiones, altas, visitas por proveedor, tiempos de espera y calidad del servicio clínico. Coordina con el CMO para identificar pacientes de alto riesgo y adherencia a protocolos."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+        maxTurnsPerRun: 500
+      type: "claude_local"
+    inputs:
+      env:
+        AIXA_CLINICAL_API_ID:
+          description: "Optional default for AIXA_CLINICAL_API_ID on agent luis-avila"
+          kind: "plain"
+          default: "bc77d90c-8ef2-495b-a42f-c2630ee46738"
+          requirement: "optional"
+        AIXA_CLINICAL_API_URL:
+          description: "Optional default for AIXA_CLINICAL_API_URL on agent luis-avila"
+          kind: "plain"
+          default: "https://aixaapimanagementgateway.azure-api.net/aixa-clinical/mcp"
+          requirement: "optional"
+        AIXA_CLINICAL_TENANT_ID:
+          description: "Optional default for AIXA_CLINICAL_TENANT_ID on agent luis-avila"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        OUTLOOK_CLIENT_ID:
+          description: "Optional default for OUTLOOK_CLIENT_ID on agent luis-avila"
+          kind: "plain"
+          default: "96cb1e50-0781-43e0-aeb9-5cd50490660b"
+          requirement: "optional"
+        OUTLOOK_CLIENT_SECRET:
+          description: "Optional default for OUTLOOK_CLIENT_SECRET on agent luis-avila"
+          kind: "secret"
+          default: ""
+          requirement: "optional"
+        OUTLOOK_TENANT_ID:
+          description: "Optional default for OUTLOOK_TENANT_ID on agent luis-avila"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        PAPERCLIP_EXTERNAL_CLIENT_ID:
+          description: "Optional default for PAPERCLIP_EXTERNAL_CLIENT_ID on agent luis-avila"
+          kind: "plain"
+          default: "5a57c436-c192-4061-947d-17ca9ebff475"
+          requirement: "optional"
+        PAPERCLIP_EXTERNAL_CLIENT_SECRET:
+          description: "Optional default for PAPERCLIP_EXTERNAL_CLIENT_SECRET on agent luis-avila"
+          kind: "secret"
+          default: ""
+          requirement: "optional"
+        TZ:
+          description: "Optional default for TZ on agent luis-avila"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  marlon-mu-oz:
+    role: "ceo"
+    icon: "crown"
+    capabilities: "Dirección estratégica general de Las Mercedes Healthcare Group. Supervisa todas las operaciones, finanzas, área médica y departamentos. Recibe reportes consolidados de todos los directores. Toma decisiones ejecutivas y aprueba presupuestos. 18 localizaciones en Dade, Broward y West Palm Beach."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+      type: "claude_local"
+    runtime:
+      heartbeat:
+        intervalSec: 300
+        maxConcurrentRuns: 1
+    permissions:
+      canCreateAgents: true
+    inputs:
+      env:
+        TZ:
+          description: "Optional default for TZ on agent marlon-mu-oz"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  miguel-mart-nez:
+    role: "general"
+    icon: "atom"
+    capabilities: "Director de farmacia y servicios farmacéuticos. Supervisa inventario de medicamentos, dispensación, costos farmacéuticos por médico, formulario, interacciones medicamentosas y cumplimiento regulatorio. Genera reportes diarios de los 3 médicos con mayor gasto en medicamentos y análisis de costos farmacéuticos."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+        maxTurnsPerRun: 500
+      type: "claude_local"
+    inputs:
+      env:
+        AIXA_PHARMACY_API_ID:
+          description: "Optional default for AIXA_PHARMACY_API_ID on agent miguel-mart-nez"
+          kind: "plain"
+          default: "092f2ea6-aa52-4ad7-94b7-bad1448b0ec8"
+          requirement: "optional"
+        AIXA_PHARMACY_API_URL:
+          description: "Optional default for AIXA_PHARMACY_API_URL on agent miguel-mart-nez"
+          kind: "plain"
+          default: "https://aixaapimanagementgateway.azure-api.net/aixa-pharmacy/mcp"
+          requirement: "optional"
+        AIXA_PHARMACY_TENANT_ID:
+          description: "Optional default for AIXA_PHARMACY_TENANT_ID on agent miguel-mart-nez"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        OUTLOOK_CLIENT_ID:
+          description: "Optional default for OUTLOOK_CLIENT_ID on agent miguel-mart-nez"
+          kind: "plain"
+          default: "96cb1e50-0781-43e0-aeb9-5cd50490660b"
+          requirement: "optional"
+        OUTLOOK_CLIENT_SECRET:
+          description: "Optional default for OUTLOOK_CLIENT_SECRET on agent miguel-mart-nez"
+          kind: "secret"
+          default: ""
+          requirement: "optional"
+        OUTLOOK_TENANT_ID:
+          description: "Optional default for OUTLOOK_TENANT_ID on agent miguel-mart-nez"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        PAPERCLIP_EXTERNAL_CLIENT_ID:
+          description: "Optional default for PAPERCLIP_EXTERNAL_CLIENT_ID on agent miguel-mart-nez"
+          kind: "plain"
+          default: "5a57c436-c192-4061-947d-17ca9ebff475"
+          requirement: "optional"
+        PAPERCLIP_EXTERNAL_CLIENT_SECRET:
+          description: "Optional default for PAPERCLIP_EXTERNAL_CLIENT_SECRET on agent miguel-mart-nez"
+          kind: "secret"
+          default: ""
+          requirement: "optional"
+        TZ:
+          description: "Optional default for TZ on agent miguel-mart-nez"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  pablo-pita:
+    role: "general"
+    icon: "circuit-board"
+    capabilities: "Director de tecnología y sistemas. Supervisa infraestructura IT, servidores, redes, seguridad informática, soporte técnico y sistemas de información en las 18 localizaciones. Coordina con AIXA para integraciones de plataforma. Monitorea uptime, tickets de soporte, incidencias de seguridad y proyectos de tecnología."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+        maxTurnsPerRun: 500
+      type: "claude_local"
+    inputs:
+      env:
+        TZ:
+          description: "Optional default for TZ on agent pablo-pita"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  report-delivery-agent:
+    role: "general"
+    icon: "mail"
+    capabilities: "Especialista en formateo y entrega de reportes para Las Mercedes Healthcare Group. SOLO recibe reportes aprobados por el QA Agent. Responsabilidades: 1) Toma el contenido aprobado por QA y lo formatea en HTML corporativo usando SOLO inline styles y tablas (NUNCA <style> tags, NUNCA <div>, NUNCA CSS classes), 2) Aplica la plantilla corporativa (header navy #1a2e42, gold #c9a84c, KPI cards, tablas con headers oscuros, alertas en rojo), 3) Envía via Microsoft Graph API desde marlon.munoz@clmmail.com, 4) Confirma envío exitoso en la tarea. NUNCA envía reportes que no hayan sido aprobados por QA."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+        maxTurnsPerRun: 500
+      type: "claude_local"
+    inputs:
+      env:
+        OUTLOOK_CLIENT_ID:
+          description: "Optional default for OUTLOOK_CLIENT_ID on agent report-delivery-agent"
+          kind: "plain"
+          default: "96cb1e50-0781-43e0-aeb9-5cd50490660b"
+          requirement: "optional"
+        OUTLOOK_CLIENT_SECRET:
+          description: "Optional default for OUTLOOK_CLIENT_SECRET on agent report-delivery-agent"
+          kind: "secret"
+          default: ""
+          requirement: "optional"
+        OUTLOOK_TENANT_ID:
+          description: "Optional default for OUTLOOK_TENANT_ID on agent report-delivery-agent"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        TZ:
+          description: "Optional default for TZ on agent report-delivery-agent"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  stopingqa:
+    role: "qa"
+    icon: "shield"
+    capabilities: "Gate crítico de calidad para Las Mercedes Healthcare Group. Revisa TODOS los reportes generados por los directores de departamento antes de que sean enviados. Valida: 1) Gramática y ortografía correcta en español e inglés, 2) Estructura y organización del contenido (resumen ejecutivo, KPIs, tablas, alertas), 3) Datos completos y coherentes (sin campos vacíos, totales que cuadren), 4) No hay PHI expuesta (nombres de pacientes, DOBs, MRNs), 5) Contenido relevante y accionable para el CEO. Si APRUEBA: crea una subtarea asignada al Report Delivery Agent con el contenido aprobado. Si RECHAZA: devuelve al director emisor con lista específica de errores y correcciones requeridas via comentario en la tarea."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+        maxTurnsPerRun: 300
+      type: "claude_local"
+    inputs:
+      env:
+        TZ:
+          description: "Optional default for TZ on agent stopingqa"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+  taimi-canellas:
+    role: "general"
+    icon: "target"
+    capabilities: "Directora del departamento de referidos. Supervisa el flujo de referidos entrantes y salientes, autorizaciones, seguimiento de citas con especialistas, tiempos de procesamiento y tasa de conversión de referidos. Monitorea referidos pendientes, aprobados y denegados por aseguradora."
+    adapter:
+      config:
+        dangerouslySkipPermissions: true
+        maxTurnsPerRun: 500
+      type: "claude_local"
+    inputs:
+      env:
+        AIXA_REFERRALS_API_ID:
+          description: "Optional default for AIXA_REFERRALS_API_ID on agent taimi-canellas"
+          kind: "plain"
+          default: "16b8b912-b360-4fdc-b879-0da12a96507d"
+          requirement: "optional"
+        AIXA_REFERRALS_API_URL:
+          description: "Optional default for AIXA_REFERRALS_API_URL on agent taimi-canellas"
+          kind: "plain"
+          default: "https://aixaapimanagementgateway.azure-api.net/aixa-referrals/mcp"
+          requirement: "optional"
+        AIXA_REFERRALS_TENANT_ID:
+          description: "Optional default for AIXA_REFERRALS_TENANT_ID on agent taimi-canellas"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        OUTLOOK_CLIENT_ID:
+          description: "Optional default for OUTLOOK_CLIENT_ID on agent taimi-canellas"
+          kind: "plain"
+          default: "96cb1e50-0781-43e0-aeb9-5cd50490660b"
+          requirement: "optional"
+        OUTLOOK_CLIENT_SECRET:
+          description: "Optional default for OUTLOOK_CLIENT_SECRET on agent taimi-canellas"
+          kind: "secret"
+          default: ""
+          requirement: "optional"
+        OUTLOOK_TENANT_ID:
+          description: "Optional default for OUTLOOK_TENANT_ID on agent taimi-canellas"
+          kind: "plain"
+          default: "7313ad10-b885-4b50-9c75-9dbbd975618f"
+          requirement: "optional"
+        PAPERCLIP_EXTERNAL_CLIENT_ID:
+          description: "Optional default for PAPERCLIP_EXTERNAL_CLIENT_ID on agent taimi-canellas"
+          kind: "plain"
+          default: "5a57c436-c192-4061-947d-17ca9ebff475"
+          requirement: "optional"
+        PAPERCLIP_EXTERNAL_CLIENT_SECRET:
+          description: "Optional default for PAPERCLIP_EXTERNAL_CLIENT_SECRET on agent taimi-canellas"
+          kind: "secret"
+          default: ""
+          requirement: "optional"
+        TZ:
+          description: "Optional default for TZ on agent taimi-canellas"
+          kind: "plain"
+          default: "America/New_York"
+          requirement: "optional"
+company:
+  brandColor: "#669c35"
+  logoPath: "images/company-logo.png"
+projects:
+  aixa-integration-operations:
+    color: "#6366f1"
+    status: "in_progress"
+sidebar:
+  agents:
+    - "marlon-mu-oz"
+    - "dr-rafael-gonz-lez"
+    - "esteban-ulloa"
+    - "gina-portilla"
+    - "jorgito-raad"
+    - "leslie-gomez"
+    - "pablo-pita"
+    - "report-delivery-agent"
+    - "stopingqa"
+    - "luis-avila"
+    - "miguel-mart-nez"
+    - "aixa-software-engineer"
+    - "ayren-castrillo"
+    - "cecie-montiel"
+    - "jessica-armas"
+    - "juan-carlos"
+    - "taimi-canellas"
+  projects:
+    - "aixa-integration-operations"
